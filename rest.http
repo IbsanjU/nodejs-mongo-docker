@@ -1,3 +1,6 @@
+###initialize
+GET http://localhost:3000/
+
 ###Get a list of all products
 GET http://localhost:4000/products
 

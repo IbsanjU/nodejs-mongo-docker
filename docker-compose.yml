@@ -14,6 +14,8 @@ services:
     build: .
     ports: 
       - 4000:3000
+    volumes:
+      - .:/usr/src/app
     environment:
       PORT: 3000
       MONGODB_URI: mongodb+srv://root:uOv4YA8lvsrFbjPR@cluster0.wjaxi.mongodb.net/?retryWrites=true&w=majority

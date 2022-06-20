@@ -1,6 +1,7 @@
 const express = require('express')
 const createError = require('http-errors')
-const dotenv = require('dotenv').config()
+const { config } = require('dotenv')
+config()
 
 const app = express()
 
@@ -9,6 +10,10 @@ app.use(express.urlencoded({ extended: true }))
 
 // Initialize DB
 require('./initDB')()
+
+app.get('/', (req, res, next) => {
+	res.json({ messgae: 'It works...', env_name: process.env.NAME })
+})
 
 const ProductRoute = require('./routes/product.route')
 app.use('/products', ProductRoute)
